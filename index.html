@@ -1,131 +1,140 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DHEngine Documentation</title>
   <style>
-    * { box-sizing: border-box; scroll-behavior: smooth; }body {
-  margin: 0;
-  font-family: Inter, Arial, sans-serif;
-  background: radial-gradient(circle at top, #0b0b0b, #000000);
-  color: #f5f5f5;
-  display: flex;
-  animation: fadeIn 0.8s ease-out;
-}
-@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    * { box-sizing: border-box; scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, Arial, sans-serif;
+      background: radial-gradient(circle at top, #0b0b0b, #000000);
+      color: #f5f5f5;
+      display: flex;
+      animation: fadeIn 0.8s ease-out;
+    }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-aside {
-  width: 290px;
-  background: linear-gradient(180deg, #0b0b0b, #050505);
-  border-right: 1px solid #1f1f1f;
-  padding: 26px 22px;
-  position: fixed;
-  height: 100vh;
-  overflow-y: auto;
-  animation: slideIn 0.6s ease-out;
-}
-@keyframes slideIn { from { transform: translateX(-24px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+    aside {
+      width: 290px;
+      background: linear-gradient(180deg, #0b0b0b, #050505);
+      border-right: 1px solid #1f1f1f;
+      padding: 26px 22px;
+      position: fixed;
+      height: 100vh;
+      overflow-y: auto;
+      animation: slideIn 0.6s ease-out;
+    }
+    @keyframes slideIn { from { transform: translateX(-24px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
 
-aside h1 {
-  font-size: 1.7rem;
-  margin-bottom: 4px;
-  color: #fb923c;
-  letter-spacing: 0.5px;
-}
-aside p {
-  font-size: 0.85rem;
-  color: #9ca3af;
-  margin-bottom: 24px;
-}
+    aside h1 {
+      font-size: 1.7rem;
+      margin-bottom: 4px;
+      color: #fb923c;
+      letter-spacing: 0.5px;
+    }
+    aside p {
+      font-size: 0.85rem;
+      color: #9ca3af;
+      margin-bottom: 24px;
+    }
 
-aside a {
-  display: block;
-  padding: 10px 14px;
-  margin: 6px 0;
-  border-radius: 10px;
-  color: #d1d5db;
-  text-decoration: none;
-  font-size: 0.95rem;
-  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
-}
-aside a:hover {
-  background: rgba(251, 146, 60, 0.12);
-  color: #fb923c;
-  transform: translateX(6px);
-}
+    aside a {
+      display: block;
+      padding: 10px 14px;
+      margin: 6px 0;
+      border-radius: 10px;
+      color: #fb923c;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    }
+    aside a:hover {
+      background: rgba(251, 146, 60, 0.15);
+      transform: translateX(6px);
+    }
 
-main {
-  margin-left: 290px;
-  padding: 70px;
-  max-width: 980px;
-}
+    main a, footer a {
+      color: #fb923c;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    main a:hover, footer a:hover {
+      color: #f97316;
+    }
 
-section {
-  margin-bottom: 110px;
-  opacity: 0;
-  transform: translateY(24px);
-  animation: sectionIn 0.6s ease-out forwards;
-}
+    main {
+      margin-left: 290px;
+      padding: 70px;
+      max-width: 980px;
+    }
 
-section:nth-child(1) { animation-delay: 0.1s; }
-section:nth-child(2) { animation-delay: 0.2s; }
-section:nth-child(3) { animation-delay: 0.3s; }
-section:nth-child(4) { animation-delay: 0.4s; }
-section:nth-child(5) { animation-delay: 0.5s; }
+    section {
+      margin-bottom: 110px;
+      opacity: 0;
+      transform: translateY(24px);
+      animation: sectionIn 0.6s ease-out forwards;
+    }
 
-@keyframes sectionIn {
-  to { opacity: 1; transform: translateY(0); }
-}
+    section:nth-child(1) { animation-delay: 0.1s; }
+    section:nth-child(2) { animation-delay: 0.2s; }
+    section:nth-child(3) { animation-delay: 0.3s; }
+    section:nth-child(4) { animation-delay: 0.4s; }
+    section:nth-child(5) { animation-delay: 0.5s; }
 
-h2 {
-  font-size: 2.4rem;
-  margin-bottom: 12px;
-  background: linear-gradient(90deg, #fb923c, #f97316);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+    @keyframes sectionIn {
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-h3 {
-  margin-top: 32px;
-  color: #fdba74;
-}
+    h2 {
+      font-size: 2.4rem;
+      margin-bottom: 12px;
+      background: linear-gradient(90deg, #fb923c, #f97316);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
 
-p {
-  color: #e5e7eb;
-  line-height: 1.8;
-}
+    h3 {
+      margin-top: 32px;
+      color: #fdba74;
+    }
 
-pre {
-  background: #050505;
-  border: 1px solid #262626;
-  padding: 22px;
-  border-radius: 16px;
-  overflow-x: auto;
-  color: #fb923c;
-  font-size: 0.92rem;
-  box-shadow: 0 25px 50px rgba(0,0,0,0.45);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-pre:hover {
-  transform: translateY(-6px) scale(1.01);
-  box-shadow: 0 35px 70px rgba(0,0,0,0.6);
-}
+    p {
+      color: #e5e7eb;
+      line-height: 1.8;
+    }
 
-footer {
-  margin-top: 140px;
-  color: #9ca3af;
-  font-size: 0.9rem;
-}
+    pre {
+      background: #050505;
+      border: 1px solid #262626;
+      padding: 22px;
+      border-radius: 16px;
+      overflow-x: auto;
+      color: #fb923c;
+      font-size: 0.92rem;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.45);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    pre:hover {
+      transform: translateY(-6px) scale(1.01);
+      box-shadow: 0 35px 70px rgba(0,0,0,0.6);
+    }
 
+    footer {
+      margin-top: 140px;
+      color: #9ca3af;
+      font-size: 0.9rem;
+    }
   </style>
   <script>
-    // Force page to start at the very top on load
     window.onload = () => {
       window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
     };
   </script>
 </head>
-<body id="top"><aside>
+<body id="top">
+<aside>
   <h1>DHEngine</h1>
   <p>Lightweight Python Game Engine</p>
   <a href="#top">Introduction</a>
@@ -137,78 +146,93 @@ footer {
   <a href="#sprite">Sprite</a>
   <a href="#body">Body (Physics)</a>
   <a href="#camera">Camera</a>
-</aside><main><section id="intro">
+</aside>
+<main>
+<section id="intro">
   <h2>Introduction</h2>
   <p>
     DHEngine is a lightweight game engine built on top of pygame.
     It provides structured systems like windows, sprites, physics,
     events, and cameras while staying simple and beginner-friendly.
   </p>
-</section><section id="install">
+</section>
+<section id="install">
   <h2>Installation</h2>
   <pre>pip install dhengine</pre>
   <p>Python 3.11 or newer is required.</p>
-</section><section id="quickstart">
+</section>
+<section id="quickstart">
   <h2>Quick Start Example</h2>
-  <p>This example shows a complete minimal game loop using DHEngine.</p>  <h3>Imports</h3>
+  <p>This example shows a complete minimal game loop using DHEngine.</p>
+  <h3>Imports</h3>
   <pre>from dhengine import *
-import pygame</pre>  <h3>Window & Core Systems</h3>
+import pygame</pre>
+  <h3>Window & Core Systems</h3>
   <pre>win = Window((800,600), "DhEngine Demo")
 clock = Clock()
-events = Events()</pre>  <h3>Create a Player Sprite</h3>
+events = Events()</pre>
+  <h3>Create a Player Sprite</h3>
   <pre>img = pygame.Surface((40,40), pygame.SRCALPHA)
 img.fill((0,200,255))player = Sprite(img, (100,100))</pre>
-
   <h3>Physics & Camera</h3>
   <pre>body = Body(player.rect, (3,0), 0.4)
-cam = Camera()</pre>  <h3>Main Game Loop</h3>
+cam = Camera()</pre>
+  <h3>Main Game Loop</h3>
   <pre>running = True
 while running:
     dt = clock.tick()
     ev = events.poll()
     if events.quit(ev):
-        running = Falsebody.update()
-cam.follow(player)
+        running = False
+    body.update()
+    cam.follow(player)
 
-win.fill()
-win.screen.blit(player.image, cam.apply(player.rect))
-win.update()
+    win.fill()
+    win.screen.blit(player.image, cam.apply(player.rect))
+    win.update()
 
 pygame.quit()</pre>
-
-</section><section id="window">
+</section>
+<section id="window">
   <h2>Window</h2>
   <p>The <b>Window</b> class creates and manages the game window.</p>
   <pre>win = Window((width, height), title)</pre>
-</section><section id="clock">
+</section>
+<section id="clock">
   <h2>Clock</h2>
   <p>The <b>Clock</b> controls frame rate and delta time.</p>
   <pre>dt = clock.tick()</pre>
-</section><section id="events">
+</section>
+<section id="events">
   <h2>Events</h2>
   <p>The <b>Events</b> system simplifies pygame event handling.</p>
   <pre>ev = events.poll()
 if events.quit(ev):
     running = False</pre>
-</section><section id="sprite">
+</section>
+<section id="sprite">
   <h2>Sprite</h2>
   <p><b>Sprite</b> represents an image with position and rect data.</p>
   <pre>player = Sprite(image, position)</pre>
-</section><section id="body">
+</section>
+<section id="body">
   <h2>Body (Physics)</h2>
   <p>The <b>Body</b> class applies velocity and gravity to a rect.</p>
   <pre>body = Body(rect, velocity, gravity)
 body.update()</pre>
-</section><section id="camera">
+</section>
+<section id="camera">
   <h2>Camera</h2>
   <p>The <b>Camera</b> offsets rendering to follow entities.</p>
   <pre>cam.follow(player)
 screen.blit(image, cam.apply(rect))</pre>
-</section><footer>
+</section>
+<footer>
   <pre># © 2025 DHEngine
 # Made by Ayaan Dhalait
 # Released under the MIT License</pre>
   <p>© 2025 DHEngine · Made by <a href="https://ayaan.is-a.dev">Ayaan Dhalait</a> · MIT License</p>
-</footer></main>
+</footer>
+</main>
 </body>
 </html>
